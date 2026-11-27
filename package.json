@@ -1,0 +1,25 @@
+{
+  "name": "taskdaily",
+  "version": "0.1.0",
+  "description": "Sistema pessoal de tarefas: bot de WhatsApp e painel desktop.",
+  "private": true,
+  "type": "module",
+  "main": "painel-electron/main.js",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.js\"",
+    "dev": "electron .",
+    "bot": "node bot-service/index.js",
+    "simular": "node scripts/simular.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.2.0",
+    "dotenv": "^18.0.10",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "electron": "^45.5.0"
+  }
+}
