@@ -12,7 +12,8 @@
     "test": "node --test \"tests/**/*.test.js\"",
     "dev": "electron .",
     "bot": "node bot-service/index.js",
-    "simular": "node scripts/simular.js"
+    "simular": "node scripts/simular.js",
+    "db:info": "node scripts/db-info.js"
   },
   "dependencies": {
     "better-sqlite3": "^13.2.0",
