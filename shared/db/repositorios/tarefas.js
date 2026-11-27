@@ -16,13 +16,15 @@ import { AGORA_SP } from '../migracoes.js';
  * @property {number | null} regra_id
  * @property {0 | 1} concluida
  * @property {string | null} data_conclusao
+ * @property {0 | 1} cancelada              cancelada sem apagar (migração 2)
+ * @property {string | null} data_cancelamento
  * @property {string} criada_em
  * @property {'wpp' | 'painel'} origem
  */
 
 const EDITAVEIS = new Set(['titulo', 'descricao', 'data_tarefa', 'hora_tarefa', 'prioridade', 'categoria',
-  'recorrente', 'regra_recorrencia', 'regra_id', 'concluida', 'data_conclusao', 'origem']);
-const BOOLEANOS = new Set(['recorrente', 'concluida']);
+  'recorrente', 'regra_recorrencia', 'regra_id', 'concluida', 'data_conclusao', 'cancelada', 'data_cancelamento', 'origem']);
+const BOOLEANOS = new Set(['recorrente', 'concluida', 'cancelada']);
 
 /** Converte true/false em 1/0 e descarta campos desconhecidos (o nome vira coluna no SQL). */
 function normalizar(campos) {

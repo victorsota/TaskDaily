@@ -93,6 +93,14 @@ export const migracoes = [
         ('pessoal', '🙂', 1);
     `,
   },
+  {
+    versao: 2,
+    nome: 'cancelamento sem apagar',
+    sql: `
+      ALTER TABLE tarefas ADD COLUMN cancelada INTEGER NOT NULL DEFAULT 0 CHECK (cancelada IN (0, 1));
+      ALTER TABLE tarefas ADD COLUMN data_cancelamento TEXT;
+    `,
+  },
 ];
 
 /**
